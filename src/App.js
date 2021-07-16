@@ -1,5 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react'
+import WeatherInfo from './WeatherInfo'
+import './App.css'
 
 function App() {
 
@@ -10,6 +12,8 @@ function App() {
   const [country, setCountry] = useState();
   const [weatherIcon, setWeatherIcon] = useState();
   const [text, setText] = useState();
+  const [celciusTem, setcelciusTem] = useState();
+  const [fahrenheitTem, setFahrenheitTem] = useState();
  
 
   useEffect(() => {
@@ -34,6 +38,8 @@ function App() {
       setCountry(res.location.country);
       setWeatherIcon(condition.icon);
       setText(condition.text);
+      setcelciusTem(res.current.temp_c)
+      setFahrenheitTem(res.current.temp_f)
 
     }
 
@@ -41,19 +47,18 @@ function App() {
       gettingAPI();
     }
 
-    console.log(lat && lon)
-
   }, [lat, lon])
 
 
   return (
     <div className="App">
-      <div container >
-      { cityName }
-      { country }
-      { regionName }
-      <img src={weatherIcon} alt="icon"></img>
-      { text }
+      <div className="main-container"> 
+
+      <WeatherInfo city={cityName} country={country} 
+      region={regionName} icon={weatherIcon} text={text}
+      tempC={celciusTem} tempF={fahrenheitTem}
+      />
+      
       </div>
     </div>
   );
