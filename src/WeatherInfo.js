@@ -22,7 +22,7 @@ const WeatherInfo = ({ city, country, icon, text, tempC, tempF, region, humidity
                 <div className="img">    
                 <img src={ icon } alt="weatherIcon"/>
                 <p>"{ text }"</p>
-                <p className="temp">{ convertion ? tempC : tempF }{ convertion ? '°C' : 'F'}</p>
+                <p className="temp">{ convertion ? tempC : tempF }{ convertion ? '°C' : '°F'}</p>
                 <p className="hum"><OpacityIcon />Humidity: {humidity}%</p>
                 <button onClick={() => setConversion(!convertion)}>
                     C/F
