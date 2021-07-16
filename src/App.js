@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     const gettingAPI = async () => {
-      const url = `http://api.weatherapi.com/v1/current.json?key=f62bc9052cd746baa7f11250210307&q=${lat}, ${lon}&aqi=no`
+      const url = `https://api.weatherapi.com/v1/current.json?key=f62bc9052cd746baa7f11250210307&q=${lat}, ${lon}&aqi=no`
       const res = await fetch(url)
       .then((res) => res.json())
       console.log(res)
