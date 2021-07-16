@@ -15,7 +15,7 @@ function App() {
   const [humidity, setHumidity] = useState();
   const [celciusTem, setcelciusTem] = useState();
   const [fahrenheitTem, setFahrenheitTem] = useState();
- 
+  
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
