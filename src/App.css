@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .main-container  {
@@ -10,13 +11,100 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color:#A2DBFA;
+  background-image: url(nubes.jpg);
 }
 
 .weather-info {
-  background-color: black;
-  color: white;
+  color: black;
   width: 30vw;
-  height: 60vh;
+  height: 65vh;
+  border-radius: 3rem;
+  background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
+
+.location{
+  display: flex;
+  justify-content: center;
+  text-align:  center;
+  flex-wrap:  wrap;
+  height: 10rem;
+}
+
+.location p{
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.location .city {
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.moreInfo{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.moreInfo .re-co {
+  width: 100%;
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:  wrap;
+}
+
+.img img{
+  width: 5rem;
+}
+
+
+.img p{
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0;
+  width: 100%;
+}
+
+.moreInfo .country{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.moreInfo .date{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.img .temp {
+  font-size: 5rem;
+}
+
+.img .hum{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .weather-info{
+    width: 80vw;
+    height: 68vh;
+  }
+}
+
 

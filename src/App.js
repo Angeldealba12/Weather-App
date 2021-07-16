@@ -8,10 +8,11 @@ function App() {
   const [lat, setlat] = useState();
   const [lon, setlon] = useState();
   const [cityName, setCityName] = useState();
-  const [regionName, setRegionName] = useState();
+  const [region, setRegion] = useState();
   const [country, setCountry] = useState();
   const [weatherIcon, setWeatherIcon] = useState();
   const [text, setText] = useState();
+  const [humidity, setHumidity] = useState();
   const [celciusTem, setcelciusTem] = useState();
   const [fahrenheitTem, setFahrenheitTem] = useState();
  
@@ -30,17 +31,16 @@ function App() {
       .then((res) => res.json())
       console.log(res)
 
-       const { condition } = res.current;
+      const { condition } = res.current;
        
-
       setCityName(res.location.name);
-      setRegionName(res.location.region);
+      setRegion(res.location.region);
       setCountry(res.location.country);
       setWeatherIcon(condition.icon);
       setText(condition.text);
       setcelciusTem(res.current.temp_c)
       setFahrenheitTem(res.current.temp_f)
-
+      setHumidity(res.current.humidity);
     }
 
     if(lat && lon){
@@ -55,8 +55,8 @@ function App() {
       <div className="main-container"> 
 
       <WeatherInfo city={cityName} country={country} 
-      region={regionName} icon={weatherIcon} text={text}
-      tempC={celciusTem} tempF={fahrenheitTem}
+       icon={weatherIcon} text={text} region={region}
+      tempC={celciusTem} tempF={fahrenheitTem} humidity={humidity}
       />
       
       </div>
